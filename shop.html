@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+ 
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <meta name = "description" content = "Sustainable Jewelry"> 
+    <meta name = "author" content = "K.A.R.E"> 
+    <title>	K.A.R.E Jewelry </title>
+    <link rel ='stylesheet' href ='StyleSheet.css'> 
+    <style type ="text/css">
+        
+
+        .banner-instructions {
+          font-size: 12px;
+          font-family: "Courier New", Courier, monospace;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.5); 
+          color: white;
+          font-weight: normal;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 15px;
+          margin-top: 20px;
+          width: 75%;
+        }
+
+        @media (max-width: 300px){
+          .banner-instructions{
+            font-size: 8px;
+            margin-top:90px;
+
+          }
+
+          h3 {
+            font-size: 30px;
+          }
+
+
+        }
+        
+        
+        .button {
+          background-color: #F8E9A5;
+          color: grey;
+          padding: 10px;
+          font-size: 15px;
+          font-family: "system-ui";
+          letter-spacing: 4px;
+        }
+
+
+       
+
+        *{
+          outline: none;
+          box-shadow: none;
+        }
+
+        .bracelets-title {
+          background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+          color: white;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: normal;
+          font-size: 60px; 
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          width: 75vh;
+        }
+
+        .slide-container {
+          margin-top:20px;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          color: white;
+        }
+
+
+
+
+        .products_label {
+          padding-left: 5px;
+          padding-right: 5px;
+          font-family: Helvetica,sans-serif;
+          font-size: 12px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+
+
+        .bracelet_image_hover {
+            opacity: 0;
+            -webkit-transition: opacity .25s ease-in-out;
+            -o-transition: opacity .25s ease-in-out;
+            transition: opacity .25s ease-in-out;
+        }
+
+
+        body {
+            margin: 0;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+
+
+
+            font-size: 100%;
+            font: inherit;
+        }
+
+    
+        div {
+          display: block;
+        }
+
+        .sectionName {
+          justify-content: center;
+          font-size: 35px;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: bold;
+        }
+
+        @media (min-width: 600px){
+          .products_label {
+              font-size: 14px;
+              margin-top: 5px;
+              line-height: 1.3;
+          }
+        
+            body {
+              font-size: 16px;
+          }
+        }
+
+        .shopSlides {
+          width: 100%;
+          height: 66vh;
+            margin-top: 40px; 
+        }
+
+        .jewelry_img {
+          opacity: 1;
+          visibility: visible;
+          object-position: center;
+          position: absolute;
+          object-fit: cover;
+          bottom: 0;
+          height: 95%;
+          left: 0;
+          right: 0;
+          top: 0;
+          width: 95%;
+          font-size: 0;
+          line-height: 0;
+        }
+
+        
+         h3 {
+            font-family: "system-ui";
+            text-align: center;
+            color: #000; 
+            letter-spacing: 5px;
+            font-style: normal; 
+            font-size: 50px; 
+        }
+
+    </style>
+          
+        
+        
+
+  </head>
+    
+	
+	<body>
+    
+    <header>
+    
+        <div class = "title"> 
+        <h1> K.A.R.E  Jewelry</h1>
+        <h2> Fashion and style made ethical and sustainable, for beauty beautiful inside and out. <br> Because we kare. </h2>
+        </div>
+        
+        <hr> 
+       
+		<ul class = "menu">	
+			<li><a href = "index.html"> HOME </a> </li>
+			<li><a href = "shop.html"> SHOP</a> </li>
+            <li><a href = "media.html"> GALLERY </a> </li>
+            <li><a href = "about.html"> ABOUT </a> </li>
+            <li><a href = "faq.html"> FAQ </a> </li> 
+            <li><a href = "contact.html"> CONTACT </a> </li>
+            
+        </ul>
+	</header>	
+    <div class = "slide-container">
+      <img class="shopSlides" src="pic3.jpg">
+      <img class="shopSlides" src="pic2.jpg">
+      <img class="shopSlides" src="pic1.jpg">
+      <div class = "bracelets-title">
+        <h3 style="color:#FFF">SHOP JEWELRY</h3>
+        <span>
+          <a href="bracelets.html" class="button">BROWSE BRACELETS</a>
+          <a href="necklaces.html" class="button">BROWSE NECKLACES</a>
+      </span>
+      </div>
+    </div>
+    
+    <script language = "javascript">
+    var myIndex = 0;
+    change_image();
+
+    function change_image() {
+      var i;
+      var x = document.getElementsByClassName("shopSlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {
+        myIndex = 1;
+      }
+      
+      x[myIndex-1].style.display = "block";
+      setTimeout(change_image, 3000);
+    }
+    
+    </script>
+
+	</body>
+  
+  
+  <footer>
+  <p> &copy; Copyright 2020 by K.A.R.E | All rights reserved. </p> 
+</footer>
+</html>

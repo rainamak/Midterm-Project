@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <meta name = "description" content = "K.A.R.E Jewelry"> 
+    <meta name = "author" content = "KARE"> 
+    <title>K.A.R.E Jewelry</title>
+    <link rel ='stylesheet' href ='StyleSheet.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type ="text/css">
+        
+        /*Images Using Flexbox */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 8px;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 25%;
+            max-width: 25%;
+            padding: 8px;
+            justify-content: center;
+        }
+
+        .column img {
+            vertical-align: middle;
+            margin-top: 14px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /*Image gets bigger when hovered over*/ 
+        img {
+            transition:transform 0.1s ease;
+        }
+
+        img:hover {
+            -webkit-transform:scale(1.18);
+            transform:scale(1.18);
+        }
+        
+	</style>
+</head>
+
+<body>
+   
+	<header>
+
+        <div class = "title"> 
+        <h1 id = "top"> K.A.R.E  Jewelry</h1>
+        <h2> Fashion and style made ethical and sustainable, for beauty beautiful inside and out. <br> Because we kare. </h2>
+        </div>
+
+        <hr> 
+       
+		<ul class = "menu">	
+			<li><a href = "index.html"> HOME </a> </li>
+			<li><a href = "shop.html"> SHOP</a> </li>
+            <li><a href = "media.html"> GALLERY </a> </li>
+            <li><a href = "about.html"> ABOUT </a> </li>
+            <li><a href = "faq.html"> FAQ </a> </li> 
+            <li><a href = "contact.html"> CONTACT </a> </li>
+            
+        </ul>
+        
+       
+	</header>	
+  
+<div class = "container">    
+    <div class = "content">
+        <h3>Welcome to Our Gallery.</h3>
+        <p> Every piece of jewelry has a story. We want to hear yours. </p>
+    </div>
+</div>
+    
+    <!-- Photos Using Flexbox -->
+    <div class="row"> 
+        <div class="column">
+            <img src="jewelry1.jpg" style="width:100%">
+            <img src="jewelry9.png" style="width:100%">
+            <img src="jewelry10.png" style="width:100%">  
+            <img src="jewelry3.jpg" style="width:100%">
+        </div>
+  
+        <div class="column">
+            <img src="jewelry5.jpg" style="width:100%">
+            <img src="jewelry2.jpg" style="width:100%">
+            <img src="jewelry6.jpg" style="width:100%">
+            <img src="jewelry11.jpg" style="width:100%">
+        </div>
+
+   
+        <div class="column">
+            <img src="jewelry7.jpg" style="width:100%">
+            <img src="jewelry8.jpg" style="width:100%">
+            <img src="jewelry4.jpg" style="width:100%">
+            <img src="jewelry12.jpeg" style="width:100%">
+        </div>
+    </div>
+    
+    
+    <div class = "content">
+        <h3> Stay in touch with us!</h3>
+    
+        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/home?lang=en" class="fa fa-twitter"></a>
+    
+    </div>
+        
+    <p class="content"> 
+        <a href="#top">Back to Top</a><br>
+        &nbsp;<br>
+        &nbsp;<br>
+    </p>
+    
+    <footer>
+        <p> COPYRIGHT &copy; 2020 K.A.R.E Jewelry</p>
+    </footer> 
+   
+</body>
+
+</html>

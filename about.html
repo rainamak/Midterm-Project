@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <meta name = "description" content = "K.A.R.E Jewelry"> 
+    <meta name = "author" content = "KARE"> 
+    <title>K.A.R.E Jewelry</title>
+    <link rel ='stylesheet' href ='StyleSheet.css'> 
+	<style type ="text/css">
+        h3 {
+            font-family: "system-ui";
+            text-align: center;
+            color: #000; 
+            letter-spacing: 5px;
+            text-decoration: none; 
+        }
+
+        .business {
+            font-family: "system-ui";
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 25%;
+            flex-wrap: wrap;
+            max-width: 25%;
+            padding: 8px;
+            justify-content: center;
+            padding-bottom: 125px;
+        }
+
+        .column img {
+            vertical-align: middle;
+            margin-top: 14px;
+            max-width: 100%;
+            height: auto;
+            display: flex;
+        }
+
+        .img-wrap {
+            position: relative;   
+            cursor: pointer;
+        }
+
+        .overlay {
+            display: none;
+        }
+
+        .img-wrap:hover > img {
+            webkit-filter: blur(10px);
+            filter: blur(10px);
+        }
+
+        .img-wrap:hover > .overlay {
+            display: inline-block;
+            font-size: 4em;
+            color: white;
+            font-family: "system-ui";
+            font-style: italic;
+            font-size: 15px;
+            position: absolute;    
+            left: 50%;               
+            top: 50%;                        
+            transform: translate(-50%,-50%);
+        }
+
+        /* Responsive layout */
+        @media (max-width: 1000px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 1000px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+
+
+        
+	</style>
+</head>
+
+<body>
+   
+	<header>
+    
+        <div class = "title"> 
+        <h1> K.A.R.E  Jewelry</h1>
+        <h2> Fashion and style made ethical and sustainable, for beauty beautiful inside and out. <br> Because we kare. </h2>
+        </div>
+        
+        <hr> 
+       
+		<ul class = "menu">	
+			<li><a href = "index.html"> HOME </a> </li>
+			<li><a href = "shop.html"> SHOP</a> </li>
+            <li><a href = "media.html"> GALLERY </a> </li>
+            <li><a href = "about.html"> ABOUT </a> </li>
+            <li><a href = "faq.html"> FAQ </a> </li> 
+            <li><a href = "contact.html"> CONTACT </a> </li>
+            
+        </ul>
+               
+	</header>	
+        <div class = "container"> 
+        <h3><strong>Our Story</strong></h3>
+        <div class="business">
+                <em>K.A.R.E Jewelry's design mission is to make accessories that will spice up your daily <br>
+                looks effortlessly and timielessly, while also being kind to the Earth. Founded by four girls studying at Tufts University in Boston, we specialize in minimalist and sustainable jewelry. 
+                <br><br>
+                <em>If you have any questions about us or our products, contact us <a href="contact.html">here</a> &#9829;</em>
+        </div>
+            </div>
+            
+        <br>
+            
+        <h3><strong>Our Team</strong></h3>
+        <div class="row">
+            <div class="column">
+                <div class="img-wrap">
+                    <img src="person1.JPG" style="width:initial">
+                        <div class="overlay">
+                            <strong>K for Kelly.</strong><br> 
+                            She's a sophomore<br>
+                            majoring in Engineering<br>
+                            Psychology.
+                        </div>
+                </div>
+                <div class="img-wrap">
+                    <img src="person3.JPG" style="width:initial">
+                        <div class="overlay">
+                            <strong>R for Raina.</strong><br>
+                            She's a sophomore<br>
+                            majoring in Engineering<br>
+                            Psychology.
+                        </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="img-wrap">
+                    <img src="person2.JPG" style="width:initial">
+                        <div class="overlay">
+                            <strong>A for Andrea.</strong><br>
+                            She's a sophomore<br>
+                            majoring in Computer<br>
+                            Science.
+                        </div>
+                </div>
+                <div class="img-wrap">  
+                    <img src="person4.JPG" style="width:initial">
+                        <div class="overlay">
+                            <strong>E for Erena.</strong><br>
+                            She's a sophomore<br>
+                            majoring in Computer<br>
+                            Science.
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <p> COPYRIGHT &copy; 2020 K.A.R.E Jewelry</p>
+    </footer> 
+   
+</body>
+
+
+
+
+</html>

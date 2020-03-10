@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <meta name = "description" content = "Sustainable Jewelry"> 
+    <meta name = "author" content = "K.A.R.E"> 
+    <title>	K.A.R.E Jewelry </title>
+    <link href="StyleSheet.css" rel="stylesheet" type = "text/css">
+    
+      <style type ="text/css">
+        .banner {
+          padding: 10px;
+          padding-top: 20px;
+          width: 100%;
+          height: 40vh;
+        }
+
+        .order-button {
+          color: white;
+          background-color: black;
+          font-size: 20px;
+          font-family: "Courier New", Courier, monospace;
+          text-decoration: none;
+          padding: 10px;
+          width: 150px;
+            height:25px; 
+          text-align: center;
+
+        }
+
+
+        .banner-instructions {
+          font-size: 12px;
+          font-family: "Courier New", Courier, monospace;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.5); 
+          color: white;
+          font-weight: normal;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 15px;
+          margin-top: 100px; 
+          width: 75%;
+          vertical-align: center; 
+        }
+
+        @media (max-width: 300px){
+          .banner-instructions{
+            font-size: 8px;
+            margin-top:90px;
+
+          }
+
+          h1 {
+            font-size: 30px;
+          }
+
+
+        }
+
+        .button {
+          background-color: #F8E9A5;
+          color: grey;
+          padding: 10px;
+          font-size: 20px;
+          font-family: "Courier New", Courier, monospace;
+          text-decoration: none;
+        }
+
+    
+    
+        *{
+          outline: none;
+          box-shadow: none;
+        }
+
+        .bracelets-title {
+          background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+          color: white;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: normal;
+          font-size: 60px; 
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          width: 75vh;
+        }
+
+        .slide-container {
+          margin-top:20px;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          color: white;
+        }
+
+        .shopping-items-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify: center;
+          justify-content: center;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          padding-bottom: 50px;
+
+        }
+
+
+        .shop_jewelry_images {
+          padding-top: 100%;
+          position: relative;
+        }
+
+        .shop_jewelry_details{
+          text-align: center;
+          margin: 12px 0;
+        }
+
+        .products_label {
+          padding-left: 5px;
+          padding-right: 5px;
+          font-family: Helvetica,sans-serif;
+          font-size: 12px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #000; 
+        }
+
+        h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        @media(min-width: 799px){
+          .shop_jewelry{
+            width: 50%;
+          }
+
+        }
+
+        .shop_jewelry {
+        /*     border-left-color: #e1e1e1; */
+            position: relative;
+        /*     border: 1px solid #e1e1e1; */
+            padding: 10px;
+            width: 30%;
+
+        }
+
+
+        .bracelet_image_hover {
+            opacity: 0;
+            -webkit-transition: opacity .25s ease-in-out;
+            -o-transition: opacity .25s ease-in-out;
+            transition: opacity .25s ease-in-out;
+        }
+
+
+        body {
+            margin: 0;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+
+            font-size: 100%;
+            font: inherit;
+        }
+
+        div {
+          display: block;
+        }
+
+        .sectionName {
+          justify-content: center;
+          font-size: 35px;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: bold;
+        }
+
+        @media (min-width: 600px){
+          .products_label {
+              font-size: 14px;
+              margin-top: 5px;
+              line-height: 1.3;
+          }
+            
+        body {
+              font-size: 16px;
+          }
+        }
+
+        .shopSlides {
+          width: 100%;
+          height: 66vh;
+        }
+
+        .jewelry_img {
+          opacity: 1;
+          visibility: visible;
+          object-position: center;
+          position: absolute;
+          object-fit: cover;
+          bottom: 0;
+          height: 95%;
+          left: 0;
+          right: 0;
+          top: 0;
+          width: 95%;
+          font-size: 0;
+          line-height: 0;
+        }
+        
+          .instructions-for-purchase {
+              margin-top: 45px;
+          }
+          
+          h3 {
+            font-family: "system-ui";
+            text-align: center;
+            color: #000; 
+            letter-spacing: 5px;
+            font-style: normal; 
+            font-size: 50px; 
+        }
+
+
+    </style>
+<script language="javascript">
+
+  function necklaceItem(name, cost, color)
+  {
+  	this.name = name;
+    this.color = color;
+  	this.cost=cost;
+  }
+
+  necklaceItems = new Array(
+  	new necklaceItem("DRIZZLE LAB GROWN DIAMOND PENDANT", 275, "ROSE GOLD"),
+  	new necklaceItem("TWISTED INFINTY PENDANT", 324, "WHITE GOLD"),
+  	new necklaceItem("HEARTFELT LOVE PENDANT", 145, "WHITE GOLD"),
+    new necklaceItem("V ESSENTIAL PENDANT", 168, "WHITE GOLD"),
+    new necklaceItem("SIMPLE AND ELEGANT NECKLACE", 78, "WHITE GOLD"),
+    new necklaceItem("GUARDIAN ANGEL AND AMETHYST", 58, "SILVER"),
+    new necklaceItem("MOON AND CRYSTAL NECKLACE", 89, "SILVER"),
+    new necklaceItem("KELSEY GOLD PENDANT IN VIOLENT KYOCERA OPAL", 54, "GOLD"),
+    new necklaceItem("ZORTE COLLAR NECKLACE", 43, "SILVER"),
+    new necklaceItem("RYANE GOLD LONG PENDANT IN ABALONE SHELL", 94, "SILVER"),
+    new necklaceItem("GOLD WITH CORAL NECKLACE", 76, "GOLD"),
+    new necklaceItem("ELISA ROSE GOLD PENDANT NECKLACE", 167, "GOLD"),
+  );
+
+</script>
+
+  </head>
+    
+	
+	<body>
+    
+    <header>
+    
+        <div class = "title"> 
+        <h1> K.A.R.E  Jewelry</h1>
+        <h2> Fashion and style made ethical and sustainable, for beauty beautiful inside and out. <br> Because we kare. </h2>
+        </div>
+        
+        <hr> 
+    
+    
+  		<ul class = "menu">	
+         
+  			<li><a href = "index.html"> HOME </a> </li>
+  			<li><a href = "shop.html"> SHOP</a> </li>
+            <li><a href = "media.html"> GALLERY </a> </li>
+            <li><a href = "about.html"> ABOUT </a> </li>
+            <li><a href = "faq.html"> FAQ </a> </li> 
+            <li><a href = "contact.html"> CONTACT </a> </li>
+        
+          </ul>
+  	</header>	
+  <div class = "instructions-for-purchase">
+    <img src="background2.jpg" alt="banner" class = "banner">
+    <div class = "banner-instructions">
+      <h3 style="color:#FFF">SHOP NECKLACES</h3>
+      <p> Please check all items and click order at end of page to place order.</p>
+        <p>Please pick up all ordered items and pay in store.</p> 
+    </div>   
+    
+  </div>
+      
+
+    <div class="shopping-items-container">
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+              <img src="necklace1a.jpg" id = "necklace1a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">DRIZZLE LAB GROWN DIAMOND PENDANT</h3>
+          <span class = "addToCart">
+            <p> ROSE GOLD / $275 
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace1a').hover(function(){
+          $(this).attr("src", "necklace1b.jpg");
+        },function(){
+          $(this).attr("src", "necklace1a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+              <img src="necklace2a.jpg" id = "necklace2a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">TWISTED INFINTY PENDANT</h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $324 
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace2a').hover(function(){
+          $(this).attr("src", "necklace2b.jpg");
+        },function(){
+          $(this).attr("src", "necklace2a.jpg");
+        });
+      </script>
+      
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace3a.jpg" id = "necklace3a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">HEARTFELT LOVE PENDANT</h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $145
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace3a').hover(function(){
+          $(this).attr("src", "necklace3b.jpg");
+        },function(){
+          $(this).attr("src", "necklace3a.jpg");
+        });
+      </script>
+      
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace4a.jpg" id = "necklace4a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">V ESSENTIAL PENDANT</h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $168
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace4a').hover(function(){
+          $(this).attr("src", "necklace4b.jpg");
+        },function(){
+          $(this).attr("src", "necklace4a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace5a.jpg" id = "necklace5a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">SIMPLE AND ELEGANT NECKLACE </h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $78
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace5a').hover(function(){
+          $(this).attr("src", "necklace5b.jpg");
+        },function(){
+          $(this).attr("src", "necklace5a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace6a.jpg" id = "necklace6a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">GUARDIAN ANGEL AND AMETHYST</h3>
+          <span class = "addToCart">
+            <p> SILVER / $58
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace6a').hover(function(){
+          $(this).attr("src", "necklace6b.jpg");
+        },function(){
+          $(this).attr("src", "necklace6a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace7a.jpg" id = "necklace7a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">MOON AND CRYSTAL NECKLACE</h3>
+          <span class = "addToCart">
+            <p> SILVER / $89
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace7a').hover(function(){
+          $(this).attr("src", "necklace7b.jpg");
+        },function(){
+          $(this).attr("src", "necklace7a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace8a.jpg" id = "necklace8a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">KELSEY GOLD PENDANT IN VIOLENT KYOCERA OPAL</h3>
+          <span class = "addToCart">
+            <p> GOLD / $54
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace8a').hover(function(){
+          $(this).attr("src", "necklace8b.jpg");
+        },function(){
+          $(this).attr("src", "necklace8a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace9a.jpg" id = "necklace9a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">ZORTE COLLAR NECKLACE</h3>
+          <span class = "addToCart">
+            <p> SILVER / $43
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace9a').hover(function(){
+          $(this).attr("src", "necklace9b.jpg");
+        },function(){
+          $(this).attr("src", "necklace9a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace10a.jpg" id = "necklace10a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">RYANE GOLD LONG PENDANT IN ABALONE SHELL</h3>
+          <span class = "addToCart">
+            <p> GOLD / $94
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace10a').hover(function(){
+          $(this).attr("src", "necklace10b.jpg");
+        },function(){
+          $(this).attr("src", "necklace10a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace11a.jpg"id = "necklace11a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">GOLD WITH CORAL NECKLACE</h3>
+          <span class = "addToCart">
+            <p> GOLD / $76
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace11a').hover(function(){
+          $(this).attr("src", "necklace11b.jpg");
+        },function(){
+          $(this).attr("src", "necklace11a.jpg");
+        });
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="necklace12a.jpg" id = "necklace12a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">ELISA ROSE GOLD PENDANT NECKLACE</h3>
+          <span class = "addToCart">
+            <p> SILVER / $167
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#necklace12a').hover(function(){
+          $(this).attr("src", "necklace12b.jpg");
+        },function(){
+          $(this).attr("src", "necklace12a.jpg");
+        });
+      </script>
+      
+      <div href="necklaces.html" class="order-button" onclick="order()">PLACE ORDER</div>
+    </div>
+
+    <script>
+    function order() {
+      var items = document.getElementsByName("add_to_cart");
+      var subtotal = 0;
+      for(i = 0; i < necklaceItems.length; i++) {
+        if(items[i].checked) {
+          var curr = necklaceItems[i].cost;
+          subtotal += curr;
+        }
+      }
+      alert("Thank you for placing the order. Your total is $" + subtotal + ". \n Please pick up your order in store in 3 business days.");
+      
+    }
+    
+    </script>
+    
+
+	</body>
+  
+  
+  <footer>
+  <p> &copy; Copyright 2020 by K.A.R.E | All rights reserved. </p> 
+</footer>
+</html>

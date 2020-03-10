@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <meta name = "description" content = "Sustainable Jewelry"> 
+    <meta name = "author" content = "K.A.R.E"> 
+    <title>	K.A.R.E Jewelry </title>
+    <link href="StyleSheet.css" rel="stylesheet" type = "text/css">
+    <style type ="text/css">
+        .banner {
+          padding: 10px;
+          padding-top: 20px;
+          width: 100%;
+          height: 40vh;
+        }
+
+        .order-button {
+          color: white;
+          background-color: black;
+          font-size: 20px;
+          font-family: "Courier New", Courier, monospace;
+          text-decoration: none;
+          padding: 10px;
+          width: 150px;
+            height:25px; 
+          text-align: center;
+        }
+
+
+        .banner-instructions {
+          font-size: 12px;
+          font-family: "Courier New", Courier, monospace;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.5); 
+          color: white;
+          font-weight: normal;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 15px;
+         margin-top: 100px; 
+          width: 75%;
+        
+          vertical-align: center; 
+        }
+        
+        .instructions-for-purchase {
+            margin-top: 45px;
+        }
+
+        @media (max-width: 300px){
+          .banner-instructions{
+            font-size: 8px;
+            margin-top:90px;
+
+          }
+
+          h1 {
+            font-size: 30px;
+          }
+
+
+        }
+
+        .button {
+          background-color: #F8E9A5;
+          color: grey;
+          padding: 10px;
+          font-size: 20px;
+          font-family: "Courier New", Courier, monospace;
+          text-decoration: none;
+        }
+
+    
+    
+        *{
+          outline: none;
+          box-shadow: none;
+        }
+
+        .bracelets-title {
+          background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+          color: white;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: normal;
+          font-size: 60px; 
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          width: 75vh;
+        }
+
+        .slide-container {
+          margin-top:20px;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          color: white;
+        }
+
+        .shopping-items-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify: center;
+          justify-content: center;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          padding-bottom: 50px;
+
+        }
+
+
+        .shop_jewelry_images {
+          padding-top: 100%;
+          position: relative;
+        }
+
+        .shop_jewelry_details{
+          text-align: center;
+          margin: 12px 0;
+        }
+
+        .products_label {
+          padding-left: 5px;
+          padding-right: 5px;
+          font-family: Helvetica,sans-serif;
+          font-size: 12px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+            color: #000; 
+        }
+
+        h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        @media(min-width: 799px){
+          .shop_jewelry{
+            width: 50%;
+          }
+
+        }
+
+        .shop_jewelry {
+            position: relative;
+            padding: 10px;
+            width: 30%;
+
+        }
+
+
+        .bracelet_image_hover {
+            opacity: 0;
+            -webkit-transition: opacity .25s ease-in-out;
+            -o-transition: opacity .25s ease-in-out;
+            transition: opacity .25s ease-in-out;
+        }
+
+
+        body {
+            margin: 0;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+
+            font-size: 100%;
+            font: inherit;
+        }
+
+        @media (min-width: 600px){
+          body {
+              font-size: 16px;
+          }
+        }
+
+        div {
+          display: block;
+        }
+
+        .sectionName {
+          justify-content: center;
+          font-size: 35px;
+          font-family: "Courier New", Courier, monospace; 
+          font-weight: bold;
+        }
+
+        @media (min-width: 600px){
+          .products_label {
+              font-size: 14px;
+              margin-top: 5px;
+              line-height: 1.3;
+          }
+        }
+
+        .shopSlides {
+          width: 100%;
+          height: 66vh;
+        }
+
+        .jewelry_img {
+          opacity: 1;
+          visibility: visible;
+          object-position: center;
+          position: absolute;
+          object-fit: cover;
+          bottom: 0;
+          height: 95%;
+          left: 0;
+          right: 0;
+          top: 0;
+          width: 95%;
+          font-size: 0;
+          line-height: 0;
+        }
+
+        h3 {
+            font-family: "system-ui";
+            text-align: center;
+            color: #FFF; 
+            letter-spacing: 4px;
+            font-style: normal; 
+            font-size: 50px; 
+        }
+
+
+    </style>
+
+<script language="javascript">
+
+  function braceletItem(name, cost, color)
+  {
+  	this.name = name;
+    this.color = color;
+  	this.cost=cost;
+  }
+
+  braceletItems = new Array(
+  	new braceletItem("DRIZZLE LAB GROWN DIAMOND BRACELET", 175, "WHITE GOLD"),
+  	new braceletItem("BUBBLY LAB GROWN DIAMONDS 4.5CT BRACELET", 199, "WHITE GOLD"),
+  	new braceletItem("ESSENTIALS 7.41CT TENNIS BRACELET", 229, "WHITE GOLD"),
+    new braceletItem("IMARA TWIST CUFF BRACELET", 168, "GOLD"),
+    new braceletItem("LULU DELICATE CUFF BRACELET", 78, "GOLD"),
+    new braceletItem("SAHANI CHAIN LINK BRACELET", 78, "GOLD"),
+    new braceletItem("ESSENTIALS LOVE INFINITY", 189, "SILVER"),
+    new braceletItem("MARCH JONQUIL FLOWER CHARM BANGLE", 125, "SHINY SILVER"),
+    new braceletItem("CRYSTAL HINGE BRACELET", 148, "GOLD"),
+    new braceletItem("ERIN BRACELET", 94, "GOLD"),
+    new braceletItem("CHLOE BRACELET", 76, "GOLD"),
+    new braceletItem("CLASSIC CHANGE BRACELET WITH GEMS", 167, "SILVER"),
+  );
+
+</script>
+
+  </head>
+    
+	
+	<body>
+    
+    <header>
+    
+        <div class = "title"> 
+        <h1> K.A.R.E  Jewelry</h1>
+        <h2> Fashion and style made ethical and sustainable, for beauty beautiful inside and out. <br> Because we kare. </h2>
+        </div>
+        
+        <hr> 
+    
+    
+  		<ul class = "menu">	
+         
+  			<li><a href = "index.html"> HOME </a> </li>
+  			<li><a href = "shop.html"> SHOP</a> </li>
+            <li><a href = "media.html"> GALLERY </a> </li>
+            <li><a href = "about.html"> ABOUT </a> </li>
+            <li><a href = "faq.html"> FAQ </a> </li> 
+            <li><a href = "contact.html"> CONTACT </a> </li>
+        
+          </ul>
+  	</header>	
+        
+  <div class = "instructions-for-purchase">
+    <img src="background1.jpg" alt="banner" class = "banner">
+    <div class = "banner-instructions">
+      <h3 >SHOP BRACELETS</h3>
+      <p> Please check all items and click order at end of page to place order.</p>
+        <p>Please pick up all ordered items and pay in store.</p> 
+    </div>   
+    
+  </div>
+      
+
+    <div class="shopping-items-container">
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+              <img src="bracelet1a.jpg" id = "bracelet1a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">DRIZZLE LAB GROWN DIAMOND BRACELET</h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $175
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+      
+        $('#bracelet1a').hover(function(){
+          $(this).attr("src", "bracelet1b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet1a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+              <img src="bracelet2a.jpg" id = "bracelet2a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">BUBBLY LAB GROWN DIAMONDS 4.5CT BRACELET</h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $199
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet2a').hover(function(){
+          $(this).attr("src", "bracelet2b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet2a.jpg");
+        });
+      
+      </script>
+      
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet3a.jpg" id = "bracelet3a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">ESSENTIALS 7.41CT TENNIS BRACELET </h3>
+          <span class = "addToCart">
+            <p> WHITE GOLD / $229
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet3a').hover(function(){
+          $(this).attr("src", "bracelet3b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet3a.jpg");
+        });
+      
+      </script>
+      
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet4a.jpg" id = "bracelet4a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">IMARA TWIST CUFF BRACELET</h3>
+          <span class = "addToCart">
+            <p> GOLD / $168
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet4a').hover(function(){
+          $(this).attr("src", "bracelet4b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet4a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet5a.jpg" id = "bracelet5a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">LULU DELICATE CUFF BRACELET</h3>
+          <span class = "addToCart">
+            <p> GOLD / $78
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet5a').hover(function(){
+          $(this).attr("src", "bracelet5b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet5a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet6a.jpg" id = "bracelet6a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">SAHANI CHAIN LINK BRACELET</h3>
+          <span class = "addToCart">
+            <p> GOLD / $78
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet6a').hover(function(){
+          $(this).attr("src", "bracelet6b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet6a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet7a.jpg" id = "bracelet7a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">ESSENTIALS LOVE INFINITY</h3>
+          <span class = "addToCart">
+            <p> SILVER / $189
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet7a').hover(function(){
+          $(this).attr("src", "bracelet7b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet7a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet8a.jpg" id = "bracelet8a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">MARCH JONQUIL FLOWER CHARM BANGLE</h3>
+          <span class = "addToCart">
+            <p> SHINY SILVER / $125
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet8a').hover(function(){
+          $(this).attr("src", "bracelet8b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet8a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet9a.jpg" id = "bracelet9a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">CRYSTAL HINGE BANGLE</h3>
+          <span class = "addToCart">
+            <p> GOLD / $148
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet9a').hover(function(){
+          $(this).attr("src", "bracelet9b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet9a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet10a.jpg" id = "bracelet10a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">ERIN BRACELET</h3>
+          <span class = "addToCart">
+            <p> GOLD / $94
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet10a').hover(function(){
+          $(this).attr("src", "bracelet10b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet10a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet11a.jpg" id = "bracelet11a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">CHLOE BRACELET</h3>
+          <span class = "addToCart">
+            <p> GOLD / $76
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+      
+      <script>
+        $('#bracelet11a').hover(function(){
+          $(this).attr("src", "bracelet11b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet11a.jpg");
+        });
+      
+      </script>
+      
+      <div class = "shop_jewelry">
+        <div class = "shop_jewelry_images">
+            <img src="bracelet12a.jpg" id = "bracelet12a" class = "jewelry_img">
+        </div>
+        <div class = "shop_jewelry_details">
+          <h3 class = "products_label">CLASSIC CHANGE BRACELET WITH GEMS</h3>
+          <span class = "addToCart">
+            <p> SILVER / $167
+            <input type="checkbox" name="add_to_cart" value="Add to Cart">
+            </p>
+          </span>
+        </div>
+      </div>
+          
+        
+      <script>
+        $('#bracelet12a').hover(function(){
+          $(this).attr("src", "bracelet12b.jpg");
+        },function(){
+          $(this).attr("src", "bracelet12a.jpg");
+        });
+      </script>
+        
+      <a href="bracelets.html" class="order-button" onclick="order()">PLACE ORDER</a>
+    </div>
+    
+    
+    
+    <script>
+    
+    function order() {
+      var items = document.getElementsByName("add_to_cart");
+      var subtotal = 0;
+      for(i = 0; i < braceletItems.length; i++) {
+        if(items[i].checked) {
+          var curr = braceletItems[i].cost;
+          subtotal += curr;
+        }
+      }
+      alert("Thank you for placing the order. Your total is $" + subtotal + ". \n Please pick up your order in store in 3 business days.");
+      
+    }
+    </script>
+    
+
+	</body>
+  
+  
+  <footer>
+  <p> &copy; Copyright 2020 by K.A.R.E | All rights reserved. </p> 
+</footer>
+</html>
